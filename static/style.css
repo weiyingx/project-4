@@ -139,6 +139,9 @@
   font-size: 25px;
 }
 
-.card {
-  border: 5px white;
+.writeup {
+  padding-top: 40px;
+  font-size: 20px;
+  color: #3D2413;
+  font-style: italic;
 }
