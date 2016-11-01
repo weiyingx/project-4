@@ -1,7 +1,49 @@
 <div class="mainbooking">
   <div class="ui grid">
-  <div class="ui text container">
-<p class="maintextheading"> Booking </p>
+    <div class="ui text container">
+      <p class="maintextheading"> Booking </p>
+    </div>
+  </div>
 </div>
-</div>
+
+<div class="bookingform">
+
+    <form class="ui large form">
+      <div class="fields">
+      <div class="ten wide field">
+        <label>Island & Resort</label>
+        <select class="ui search dropdown">
+          <option value="">Select Island & Resort</option>
+          <option value="Tioman Island -- Berjaya"> Tioman Island -- Berjaya Tioman Resort </option>
+          <option value="Tioman Island -- Paya"> Tioman Island -- Paya Beach Resort </option>
+          <option value="Tioman Island -- Panuba"> Tioman Island -- Panuba Inn </option>
+          <option value="Pulau Besar -- Dcoconut"> Pulau Besar -- D'Coconut Island Resort </option>
+          <option value="Pulau Besar -- Aseania"> Pulau Besar -- Aseania Beach Resort </option>
+        </select>
+      </div>
+    <div class="two wide field">
+      <label>Number of Pax</label>
+      <input type="number" placeholder="2">
+    </div>
+  </div>
+
+      <div class="fields">
+        <div class="six wide field">
+          <label>Check-In</label>
+          <input type="date">
+        </div>
+        <div class="six wide field">
+          <label>Check-Out</label>
+          <input type="date">
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui checkbox">
+          <input type="checkbox" tabindex="0" class="hidden">
+          <label>I agree to the Terms and Conditions</label>
+        </div>
+      </div>
+      <button class="ui teal basic button" type="submit">Submit Booking</button>
+    </form>
+
 </div>
