@@ -23,7 +23,7 @@ module.exports = {
       checkOut: {
         type: Sequelize.DATE
       },
-      packageId: {
+      resortpackageId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

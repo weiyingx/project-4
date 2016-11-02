@@ -8,42 +8,36 @@
 
 <div class="bookingform">
 
-    <form class="ui large form">
-      <div class="fields">
+    <form class="searchResort ui large form" action="/search" method="POST">
       <div class="ten wide field">
-        <label>Island & Resort</label>
-        <select class="ui search dropdown">
-          <option value="">Select Island & Resort</option>
-          <option value="Tioman Island -- Berjaya"> Tioman Island -- Berjaya Tioman Resort </option>
-          <option value="Tioman Island -- Paya"> Tioman Island -- Paya Beach Resort </option>
-          <option value="Tioman Island -- Panuba"> Tioman Island -- Panuba Inn </option>
-          <option value="Pulau Besar -- Dcoconut"> Pulau Besar -- D'Coconut Island Resort </option>
-          <option value="Pulau Besar -- Aseania"> Pulau Besar -- Aseania Beach Resort </option>
+        <label>Resort</label>
+        <select name="resortSelect" class="ui search dropdown">
+          <option value="">Select Resort</option>
+          <option value="Berjaya Tioman Resort"> Tioman Island -- Berjaya Tioman Resort </option>
+          <option value="Paya Beach Resort"> Tioman Island -- Paya Beach Resort </option>
+          <option value="Panuba Inn"> Tioman Island -- Panuba Inn </option>
+          <option value="D'Coconut Beach Resort"> Pulau Besar -- D'Coconut Island Resort </option>
+          <option value="Aseania Beach Resort"> Pulau Besar -- Aseania Beach Resort </option>
         </select>
       </div>
-    <div class="two wide field">
-      <label>Number of Pax</label>
-      <input type="number" placeholder="2">
-    </div>
+      <button class="ui teal basic button" type="submit">Search Resorts</button>
+    </form>
   </div>
 
-      <div class="fields">
-        <div class="six wide field">
-          <label>Check-In</label>
-          <input type="date">
-        </div>
-        <div class="six wide field">
-          <label>Check-Out</label>
-          <input type="date">
-        </div>
-      </div>
-      <div class="field">
-        <div class="ui checkbox">
-          <input type="checkbox" tabindex="0" class="hidden">
-          <label>I agree to the Terms and Conditions</label>
+    <% if(resortpackage) { %>
+    <% for (var i = 0; i < resortpackage.length; i++) { %>
+    <% var resort = resortpackage[i]; %>
+    <div class="resortList">
+      <div class="resortDisplay">
+        <div class="resortDescription">
+        <h5><strong>Resort:</strong> <%= resort.resort %></h5>
+        <h5><strong>Island:</strong><%= resort.island %></h5>
+        <h5><strong>Room Type:</strong> <%= resort.roomType %></h5>
+        <h5><strong>Package Type:</strong> <%= resort.packageType %></h5>
+        <h5><strong>Price Per Person Per Night:</strong> <%= resort.price %></h5>
         </div>
       </div>
-      <button class="ui teal basic button" type="submit">Submit Booking</button>
-    </form>
+    </div>
 
-</div>
+<% } %>
+<% } %>

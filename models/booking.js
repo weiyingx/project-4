@@ -6,11 +6,11 @@ module.exports = function(sequelize, DataTypes) {
     contact: DataTypes.INTEGER,
     checkIn: DataTypes.DATE,
     checkOut: DataTypes.DATE,
-    packageId: DataTypes.INTEGER
+    resortpackageId: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
-        models.booking.belongsTo(models.package);
+        models.booking.belongsTo(models.resortpackage);
       }
     }
   });

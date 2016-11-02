@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var package = sequelize.define('package', {
+  var resortpackage = sequelize.define('resortpackage', {
     island: DataTypes.STRING,
     resort: DataTypes.STRING,
     roomType: DataTypes.STRING,
@@ -9,9 +9,9 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        models.package.hasMany(models.booking);
+        models.resortpackage.hasMany(models.booking);
       }
     }
   });
-  return package;
+  return resortpackage;
 };

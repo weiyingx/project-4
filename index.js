@@ -1,5 +1,7 @@
 var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
+var bodyParser = require('body-parser');
+var db = require("./models");
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
@@ -9,22 +11,33 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/static'));
 app.use(ejsLayouts);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.get('/', function(req, res) {
   res.render('index');
 });
 
-// app.get('/livechat', function(req, res) {
-//   res.render('livechat');
-// });
-
 app.get('/livechat', function(req, res){
   res.sendFile(__dirname + '/views/livechat.html');
 });
 
 app.get('/booking', function(req, res) {
-  res.render('booking');
+  res.render('booking',{resortpackage:false});
+});
+
+app.post('/search', function(req, res) {
+  db.resortpackage.findAll({
+    where: {
+      resort: req.body.resortSelect
+    }
+  }).then(function(resortpackage) {
+    console.log(resortpackage);
+    res.render('booking', {
+      resortpackage: resortpackage
+    });
+  });
 });
 
 app.get('/planner', function(req, res) {
