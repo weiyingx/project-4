@@ -77,10 +77,21 @@ app.get('/dcoconut', function(req, res) {
 
 
 var numUsers = 0;
+var viewer = 0;
+
 
 io.on('connection', function(socket){
   var addedUser = false;
-  console.log('a user connected');
+  viewer++;
+  socket.broadcast.emit('count', viewer);
+  console.log('a user connected ' + viewer);
+  io.sockets.emit('count', viewer)
+  
+  socket.on('disconnect', function(){
+    viewer--;
+    socket.broadcast.emit('count', viewer);
+    console.log('user disconnected ' + viewer);
+  });
   socket.on('new message', function (data) {
     socket.broadcast.emit('new message', {
       username: socket.username,
