@@ -9,19 +9,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       fullName: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       contact: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
       },
       checkIn: {
         type: Sequelize.DATE
       },
       checkOut: {
         type: Sequelize.DATE
+      },
+      pax: {
+        type: Sequelize.INTEGER
       },
       resortpackageId: {
         type: Sequelize.INTEGER
