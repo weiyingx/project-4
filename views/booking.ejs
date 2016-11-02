@@ -35,10 +35,10 @@
         <h5><strong>Room Type:</strong> <%= resort.roomType %></h5>
         <h5><strong>Package Type:</strong> <%= resort.packageType %></h5>
         <h5><strong>Price Per Person Per Night:</strong> SGD$ <%= resort.price %></h5>
-        <div class="ui bottom attached basic teal button">
+        <a class="order-button ui basic teal button">
           <i class="calendar icon"></i>
           Book Package
-        </div>
+        </a>
         </div>
       </div>
     </div>
@@ -46,3 +46,44 @@
 
 <% } %>
 <% } %>
+
+<div class="ui modal modaldiv">
+  <i class="close icon"></i>
+  <div class="header">
+    Booking Form
+  </div>
+  <div class="ui form">
+    <div class="fields">
+        <div class="six wide large field">
+          <label>Full name</label>
+          <input type="text" placeholder="Full Name">
+        </div>
+        <div class="four wide large field">
+          <label>Contact Number</label>
+          <input type="string" placeholder="Contact Number">
+        </div>
+        <div class="six wide large field">
+          <label>Email</label>
+          <input type="text" placeholder="Email">
+        </div>
+      </div>
+      <div class="fields">
+          <div class="six wide large field">
+            <label>Check In</label>
+            <input type="date">
+          </div>
+          <div class="six wide large field">
+            <label>Check Out</label>
+            <input type="date">
+          </div>
+          <div class="four wide large field">
+            <label>Pax</label>
+            <input type="number" placeholder="2">
+          </div>
+        </div>
+  </div>
+  <div class="actions">
+    <div class="ui button">Cancel</div>
+    <div class="ui button">OK</div>
+  </div>
+</div>

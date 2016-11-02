@@ -74,15 +74,6 @@
   background-size: cover;
 }
 
-.payamain {
-  margin-top: -55px;
-  min-height:40%;
-  padding-bottom:60px;
-  box-sizing:border-box;
-  background:url("img/paya.JPG") no-repeat center center fixed;
-  background-size: cover;
-}
-
 
 .berjayatextheading {
   padding-top: 40px;
@@ -227,16 +218,6 @@
   font-style: italic;
 }
 
-#pagecount {
-  height: 100px;
-  width: 150px;
-  border-color: #bff0e5;
-  border:2px solid;
-  margin-left: 100px;
-  font-size: 30px;
-  color: beige;
-  font-style: italic;
-}
 
 .ui.segment {
   background: #F0EDD7;
