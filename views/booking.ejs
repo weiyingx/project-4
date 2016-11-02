@@ -28,16 +28,21 @@
     <% for (var i = 0; i < resortpackage.length; i++) { %>
     <% var resort = resortpackage[i]; %>
     <div class="resortList">
-      <div class="resortDisplay">
-        <div class="resortDescription">
-        <h5><strong>Resort:</strong> <%= resort.resort %></h5>
-        <h5><strong>Island:</strong><%= resort.island %></h5>
+      <div class="ui card">
+        <div class="resortDescription content">
+        <h5 class="header"><strong>Resort:</strong> <%= resort.resort %></h5>
+        <h5 class="meta"><strong>Island:</strong><%= resort.island %></h5>
         <h5><strong>Room Type:</strong> <%= resort.roomType %></h5>
         <h5><strong>Package Type:</strong> <%= resort.packageType %></h5>
-        <h5><strong>Price Per Person Per Night:</strong> <%= resort.price %></h5>
+        <h5><strong>Price Per Person Per Night:</strong> SGD$ <%= resort.price %></h5>
+        <div class="ui bottom attached basic teal button">
+          <i class="calendar icon"></i>
+          Book Package
+        </div>
         </div>
       </div>
     </div>
+
 
 <% } %>
 <% } %>

@@ -96,8 +96,8 @@
 }
 
 .bookingform {
-  min-height:60%;
-  padding-bottom:60px;
+  min-height:50%;
+  padding-bottom:20px;
   padding-top: 60px;
   padding-left: 200px;
   padding-right: 200px;
@@ -106,16 +106,23 @@
 }
 
 .resortList {
-  min-height:50%;
-  padding-bottom:60px;
-  padding-top: 60px;
+  min-height:60%;
+  padding-bottom: 30px;
   padding-left: 200px;
   padding-right: 200px;
   box-sizing:border-box;
   background: #F0EDD7 no-repeat center center fixed;
 }
 
+.resortDescription {
+  text-align: center;
+  color: #3D2413;
+}
 
+
+.calendar.icon {
+  color: grey;
+}
 
 
 .ui.stackable.inverted.grid {
