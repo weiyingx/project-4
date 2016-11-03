@@ -1,5 +1,6 @@
 console.log('hello world');
 
+var map;
 
 $(document).ready(function() {
   $('.special.cards .image').dimmer({
@@ -30,7 +31,11 @@ $('a').click(function(){
     return false;
 });
 
-// $('.order-button').click(function(){
-//     $('.modaldiv').modal('show');
-// });
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+}
+
 })

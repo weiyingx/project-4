@@ -94,6 +94,7 @@
 }
 
 .mapping {
+
   min-height:100%;
   padding-bottom:60px;
   padding-top: 60px;
@@ -237,6 +238,10 @@
 
 .bookingdetails {
   text-align: center;
+}
+
+#map {
+  height: 100%;
 }
 
 /*.card {

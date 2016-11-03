@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sany Travel</title>
+    <link href="https://fonts.googleapis.com/css?family=La+Belle+Aurore" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+<style>
+
+#map {
+  height: 100%;
+}
+html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+}
+
+.plantrip {
+  margin-top: -55px;
+  min-height:70%;
+  padding-bottom:60px;
+  box-sizing:border-box;
+  background:url("img/plantrip4.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.mapping {
+  min-height:100%;
+  padding-bottom:60px;
+  padding-top: 60px;
+  padding-left: 200px;
+  padding-right: 200px;
+  box-sizing:border-box;
+  background: #F0EDD7 no-repeat center center fixed;
+}
+
+.planningtextheading {
+  padding-top: 180px;
+  color: white;
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 100px;
+  text-align: center;
+}
+
+.navbar {
+  padding-top: 10px;
+  opacity: 1;
+  ackground: #1ebfb1; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #1ebfb1 25%, #2085c9 78%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #1ebfb1 25%,#2085c9 78%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #1ebfb1 25%,#2085c9 78%);
+}
+
+.footer {
+  background: #1ebfb1; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #1ebfb1 25%, #2085c9 78%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #1ebfb1 25%,#2085c9 78%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #1ebfb1 25%,#2085c9 78%);
+  position: absolute;
+  margin-top: 0px;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.ui.stackable.inverted.grid {
+  background: #1ebfb1; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #1ebfb1 25%, #2085c9 78%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #1ebfb1 25%,#2085c9 78%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #1ebfb1 25%,#2085c9 78%);
+  text-align: center;
+}
+
+.icon {
+  color: white;
+}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+</head>
+
+<body>
+
+  <div class="navbar">
+  <div class="ui large secondary pointer menu">
+    <a href="/" class="item">
+      <i class="large home icon"></i>
+    </a>
+    <div class="ui simple dropdown large inverted button">
+      Islands
+      <i class="dropdown icon"></i>
+      <div class="menu">
+            <div class="divider"></div>
+            <a href="/tioman" class="header">Tioman Island</a>
+            <a href="/berjaya" class="item">Berjaya Tioman Resort</a>
+            <a href="/paya" class="item">Paya Beach Resort</a>
+            <a href="/panuba" class="item">Panuba Inn</a>
+            <div class="divider"></div>
+            <a href="/pulaubesar" class="header">Pulau Besar</a>
+            <a href="/dcoconut"class="item">D'Coconut Island resort</a>
+            <a href="/aseania" class="item">Aseania Beach Resort</a>
+          </div>
+    </div>
+    <a href="/booking" class="ui large inverted button">
+      Book Now
+    </a>
+    <div class="right menu">
+      <a href="/planner" class="ui inverted red basic button">
+        Trip Planner
+      </a>
+    <a href="/livechat" class="ui inverted teal basic button">
+      Live Chat
+    </a>
+  </div>
+  </div>
+</div>
+
+<div class="plantrip">
+  <div class="ui grid">
+    <div class="ui text container">
+      <p class="planningtextheading"> Plan Your Trip </p>
+    </div>
+  </div>
+</div>
+
+<div class="mapping" style="height:100%; width:100%;">
+  <div id="map"></div>
+</div>
+
+
+
+
+
+<div class="footer">
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
+            <a href="/" class="item">Home</a>
+            <a href="/planner" class="item">Trip Planner</a>
+            <a href="/booking" class="item">Book Now</a>
+            <a href="/livechat" class="item">Live Chat</a>
+            <a href="#" class="item">FAQs</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h3 class="ui inverted header">Contact Us</h3>
+          <div>
+            <p>Sany Travel & Tour (1992)<br></p>
+          <p><i class="marker icon"></i> 545 Orchard Road #B1 – 20 <br>
+          Far East Shopping Centre <br>
+          Singapore 238882 </p>
+          </div>
+          <br>
+          <div>
+          <p><i class="call icon"></i> 67321316</p>
+          </div>
+          <br>
+          <div>
+          <p><i class="mail icon"></i> sanytrvl@hotmail.com</p>
+          </div>
+        </div>
+        <div class="six wide column">
+          <h3 class="ui inverted header">Land and Sea Experts Since 1988</h3>
+            <p>Sany Travel & Tour gives you the best prices in town and our friendly experts are here to help you customise a travel package that suits your needs. </p>
+            <a href="#"><i class="big facebook square icon"></i></a>
+            <a href="#"><i class="big instagram icon"></i></a>
+            <a href="#"><i class="big twitter square icon"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_dG5Q-nQktPZSGXGKvADq-ebCSV5fH2I&callback=initMap"
+    async defer></script>
+</body>
+</html>

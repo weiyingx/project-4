@@ -84,8 +84,9 @@ app.get('/bookconfirmation', function(req, res) {
   res.render('bookconfirmation');
 });
 
-app.get('/planner', function(req, res) {
-  res.render('planner');
+
+app.get('/tripplanner', function(req, res){
+  res.sendFile(__dirname + '/views/tripplanner.html');
 });
 
 app.get('/tioman', function(req, res) {
