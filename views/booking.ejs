@@ -32,12 +32,17 @@
           <div class="ui card">
             <div class="resortDescription content">
               <h5 class="header"><strong>Resort:</strong> <%= resort.resort %></h5>
-              <h5 class="meta"><strong>Island:</strong><%= resort.island %></h5>
+              <h5 class="header"><strong>Island:</strong><%= resort.island %></h5>
               <h5><strong>Room Type:</strong> <%= resort.roomType %></h5>
               <h5><strong>Package Type:</strong> <%= resort.packageType %></h5>
               <h5><strong>Price Per Person Per Night:</strong> SGD$ <%= resort.price %></h5>
               <form action="/chooseResort" method="POST">
                 <input type="hidden" name="packageId" value="<%= resort.id %>">
+                <input type="hidden" name="packagename" value="<%= resort.resort %>">
+                <input type="hidden" name="packageisland" value="<%= resort.island %>">
+                <input type="hidden" name="packageroom" value="<%= resort.roomType %>">
+                <input type="hidden" name="packagetype" value="<%= resort.packageType %>">
+                <input type="hidden" name="packageprice" value="<%= resort.price %>">
                 <button class="order-button ui basic teal button" type="submit">
                   Choose Package
                 </button>

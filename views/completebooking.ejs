@@ -9,71 +9,73 @@
 <div class="bookingform">
 
   <div class="ui ordered top attached steps">
-  <div class="completed step">
-    <div class="content">
-      <div class="title">Package</div>
-      <div class="bookingdescription">Choose your resort package options</div>
+    <div class="completed step">
+      <div class="content">
+        <div class="title">Package</div>
+        <div class="bookingdescription">Choose your resort package options</div>
+      </div>
+    </div>
+    <div class="active step">
+      <div class="content">
+        <div class="title">Booking</div>
+        <div class="bookingdescription">Complete your booking</div>
+      </div>
+    </div>
+    <div class="disabled step">
+      <div class="content">
+        <div class="title">Confirm Booking</div>
+        <div class="bookingdescription">Booking is confirmed</div>
+      </div>
     </div>
   </div>
-  <div class="active step">
-    <div class="content">
-      <div class="title">Booking</div>
-      <div class="bookingdescription">Complete your booking</div>
-    </div>
-  </div>
-  <div class="disabled step">
-    <div class="content">
-      <div class="title">Confirm Booking</div>
-      <div class="bookingdescription">Booking is confirmed</div>
-    </div>
-  </div>
-</div>
   <div class="ui attached segments">
     <div class="ui segment">
-    <p class="writeup">Booking Form</p>
-  </div>
-  <div class="ui segment">
-  <p class="writeup">Resort Details blah blah</p>
-</div>
-  <div class="ui segment">
-    <form action="/finishbooking" method="POST">
-    <div class="ui form">
-      <div class="fields">
-        <div class="six wide large field">
-          <label>Full name</label>
-          <input type="text" name="fullname" placeholder="Full Name">
-        </div>
-        <div class="six wide large field">
-          <label>Email</label>
-          <input type="text" name="emailadd" placeholder="Email">
-        </div>
-        <div class="four wide large field">
-          <label>Contact Number</label>
-          <input type="text" name="contactno" placeholder="Contact Number">
-        </div>
-      </div>
-      <div class="fields">
-        <div class="six wide large field">
-          <label>Check In</label>
-          <input type="date" name="checkin">
-        </div>
-        <div class="six wide large field">
-          <label>Check Out</label>
-          <input type="date" name="checkout">
-        </div>
-        <div class="four wide large field">
-          <label>Pax</label>
-          <input type="number" placeholder="2" name="pax">
-        </div>
-      </div>
-      <input type="hidden" name="resortpackageId" value="<%= packageId%>">
-      <div class="actions">
-        <button class="ui button" type="submit" ><i class="calendar icon"></i>Book</button>
-      </div>
+      <p class="bookingformdetails">Booking Form</p>
     </div>
-  </form>
-</div>
-</div>
+    <div class="ui segment bookingdetails">
+        <h3 class="header"><%= packagename%>, <%= packageisland%> </h3>
+        <h5> <%= packageroom%> Room & <%= packagetype%> Package</h5>
+        <h5><strong>Price Per Person Per Night: </strong> SGD$ <em><%= packageprice%></em> </h5>
+    </div>
+    <form action="/finishbooking" method="POST">
+      <div class="ui segment">
+        <div class="ui form">
+          <div class="fields">
+            <div class="six wide large field">
+              <label>Full name</label>
+              <input type="text" name="fullname" placeholder="Full Name">
+            </div>
+            <div class="six wide large field">
+              <label>Email</label>
+              <input type="text" name="emailadd" placeholder="Email">
+            </div>
+            <div class="four wide large field">
+              <label>Contact Number</label>
+              <input type="text" name="contactno" placeholder="Contact Number">
+            </div>
+          </div>
+          <div class="fields">
+            <div class="six wide large field">
+              <label>Check In</label>
+              <input type="date" name="checkin">
+            </div>
+            <div class="six wide large field">
+              <label>Check Out</label>
+              <input type="date" name="checkout">
+            </div>
+            <div class="four wide large field">
+              <label>Pax</label>
+              <input type="number" placeholder="2" name="pax">
+            </div>
+          </div>
+          <input type="hidden" name="resortpackageId" value="<%= packageId%>">
+          <div class="actions">
+            <button class="ui button" type="submit" ><i class="calendar icon"></i>Book</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 <div class="resortList">

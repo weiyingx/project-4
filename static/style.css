@@ -228,7 +228,17 @@
   background: #F0EDD7;
 }
 
-/*.ui.modaldiv.form {
-  padding-left: 30px;
+.bookingformdetails {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  font-family: 'Shadows Into Light', cursive;
+}
 
+.bookingdetails {
+  text-align: center;
+}
+
+/*.card {
+  float: left;
 }*/

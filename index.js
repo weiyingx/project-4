@@ -43,7 +43,19 @@ app.post('/search', function(req, res) {
 
 app.post('/chooseResort', function(req, res) {
     packageId = req.body.packageId
-    res.render('completebooking', {packageId: packageId});
+    packagename = req.body.packagename
+    packageisland = req.body.packageisland
+    packageroom = req.body.packageroom
+    packagetype = req.body.packagetype
+    packageprice = req.body.packageprice
+    res.render('completebooking', {
+      packageId: packageId,
+      packagename: packagename,
+      packageisland: packageisland,
+      packageroom: packageroom,
+      packagetype: packagetype,
+      packageprice: packageprice
+    });
   });
 
   app.post('/finishbooking', function(req, res) {
