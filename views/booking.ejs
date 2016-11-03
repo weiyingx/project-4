@@ -36,8 +36,8 @@
               <h5><strong>Room Type:</strong> <%= resort.roomType %></h5>
               <h5><strong>Package Type:</strong> <%= resort.packageType %></h5>
               <h5><strong>Price Per Person Per Night:</strong> SGD$ <%= resort.price %></h5>
-              <form action="/chooseResort" method="GET">
-                <input type="hidden" name="resortpackageId" value="<%= resort.id %>">
+              <form action="/chooseResort" method="POST">
+                <input type="hidden" name="packageId" value="<%= resort.id %>">
                 <button class="order-button ui basic teal button" type="submit">
                   Choose Package
                 </button>

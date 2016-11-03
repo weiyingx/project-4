@@ -41,12 +41,18 @@ app.post('/search', function(req, res) {
 });
 
 
-app.get('/chooseResort', function(req, res) {
-    res.render('completebooking');
+app.post('/chooseResort', function(req, res) {
+    packageId = req.body.packageId
+    res.render('completebooking', {packageId: packageId});
   });
 
   app.post('/finishbooking', function(req, res) {
-    db.resortpackage.findOne().then(function(resortpackage) {
+    console.log(req.params);
+    db.resortpackage.find({
+      where: {
+        id: req.body.resortpackageId
+      }
+    }).then(function(resortpackage) {
     resortpackage.createBooking({
       fullName: req.body.fullname,
       email: req.body.emailadd,
