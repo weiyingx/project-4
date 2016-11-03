@@ -8,66 +8,74 @@
 
 <div class="bookingform">
 
-    <form class="searchResort ui large form" action="/search" method="POST">
-      <div class="ten wide field">
-        <label>Resort</label>
-        <select name="resortSelect" class="ui search dropdown">
-          <option value="">Select Resort</option>
-          <option value="Berjaya Tioman Resort"> Tioman Island -- Berjaya Tioman Resort </option>
-          <option value="Paya Beach Resort"> Tioman Island -- Paya Beach Resort </option>
-          <option value="Panuba Inn"> Tioman Island -- Panuba Inn </option>
-          <option value="D'Coconut Beach Resort"> Pulau Besar -- D'Coconut Island Resort </option>
-          <option value="Aseania Beach Resort"> Pulau Besar -- Aseania Beach Resort </option>
-        </select>
-      </div>
-      <button class="ui teal basic button" type="submit">Search Resorts</button>
-    </form>
-  </div>
+  <div class="ui segments">
+    <div class="ui segment">
+      <form class="searchResort ui large form" action="/search" method="POST">
+        <div class="ten wide field">
+          <label>Resort</label>
+          <select name="resortSelect" class="ui search dropdown">
+            <option value="">Select Resort</option>
+            <option value="Berjaya Tioman Resort"> Tioman Island -- Berjaya Tioman Resort </option>
+            <option value="Paya Beach Resort"> Tioman Island -- Paya Beach Resort </option>
+            <option value="Panuba Inn"> Tioman Island -- Panuba Inn </option>
+            <option value="D'Coconut Beach Resort"> Pulau Besar -- D'Coconut Island Resort </option>
+            <option value="Aseania Beach Resort"> Pulau Besar -- Aseania Beach Resort </option>
+          </select>
+        </div>
+        <button class="ui teal basic button" type="submit">Search Resorts</button>
+      </form>
+    </div>
+    <div class="ui segment">
+      <% if(resortpackage) { %>
+        <% for (var i = 0; i < resortpackage.length; i++) { %>
+          <% var resort = resortpackage[i]; %>
+          <div class="ui card">
+            <div class="resortDescription content">
+              <h5 class="header"><strong>Resort:</strong> <%= resort.resort %></h5>
+              <h5 class="meta"><strong>Island:</strong><%= resort.island %></h5>
+              <h5><strong>Room Type:</strong> <%= resort.roomType %></h5>
+              <h5><strong>Package Type:</strong> <%= resort.packageType %></h5>
+              <h5><strong>Price Per Person Per Night:</strong> SGD$ <%= resort.price %></h5>
+              <a class="order-button ui basic teal button">
+                <i class="calendar icon"></i>
+                Book Package
+              </a>
+            </div>
+          </div>
 
-    <% if(resortpackage) { %>
-    <% for (var i = 0; i < resortpackage.length; i++) { %>
-    <% var resort = resortpackage[i]; %>
-    <div class="resortList">
-      <div class="ui card">
-        <div class="resortDescription content">
-        <h5 class="header"><strong>Resort:</strong> <%= resort.resort %></h5>
-        <h5 class="meta"><strong>Island:</strong><%= resort.island %></h5>
-        <h5><strong>Room Type:</strong> <%= resort.roomType %></h5>
-        <h5><strong>Package Type:</strong> <%= resort.packageType %></h5>
-        <h5><strong>Price Per Person Per Night:</strong> SGD$ <%= resort.price %></h5>
-        <a class="order-button ui basic teal button">
-          <i class="calendar icon"></i>
-          Book Package
-        </a>
+
+          <% } %>
+          <% } %>
         </div>
       </div>
     </div>
 
+    <div class="resortList">
+    </div>
 
-<% } %>
-<% } %>
 
-<div class="ui modal modaldiv">
-  <i class="close icon"></i>
-  <div class="header">
-    Booking Form
-  </div>
-  <div class="ui form">
-    <div class="fields">
-        <div class="six wide large field">
-          <label>Full name</label>
-          <input type="text" placeholder="Full Name">
-        </div>
-        <div class="four wide large field">
-          <label>Contact Number</label>
-          <input type="text" placeholder="Contact Number">
-        </div>
-        <div class="six wide large field">
-          <label>Email</label>
-          <input type="text" placeholder="Email">
-        </div>
+
+    <div class="ui modal modaldiv">
+      <i class="close icon"></i>
+      <div class="header">
+        Booking Form
       </div>
-      <div class="fields">
+      <div class="ui form">
+        <div class="fields">
+          <div class="six wide large field">
+            <label>Full name</label>
+            <input type="text" placeholder="Full Name">
+          </div>
+          <div class="four wide large field">
+            <label>Contact Number</label>
+            <input type="text" placeholder="Contact Number">
+          </div>
+          <div class="six wide large field">
+            <label>Email</label>
+            <input type="text" placeholder="Email">
+          </div>
+        </div>
+        <div class="fields">
           <div class="six wide large field">
             <label>Check In</label>
             <input type="date">
@@ -81,9 +89,9 @@
             <input type="number" placeholder="2">
           </div>
         </div>
-  </div>
-  <div class="actions">
-    <div class="ui button">Cancel</div>
-    <div class="ui button">OK</div>
-  </div>
-</div>
+      </div>
+      <div class="actions">
+        <div class="ui button">Cancel</div>
+        <div class="ui button">OK</div>
+      </div>
+    </div>

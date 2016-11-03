@@ -143,11 +143,9 @@
   color: #3D2413;
 }
 
-
 .calendar.icon {
   color: grey;
 }
-
 
 .ui.stackable.inverted.grid {
   background: #1ebfb1; /* Old browsers */
@@ -218,7 +216,11 @@
   font-style: italic;
 }
 
-
 .ui.segment {
   background: #F0EDD7;
 }
+
+/*.ui.modaldiv.form {
+  padding-left: 30px;
+
+}*/
