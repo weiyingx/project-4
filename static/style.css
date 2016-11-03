@@ -201,6 +201,14 @@
   font-size: 100px;
 }
 
+.bookingconfirmationtext {
+  margin-top: -100px;
+  padding-left: 500px;
+  color: white;
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 40px;
+}
+
 .description {
   margin-left: 70px;
   margin-right: 70px;

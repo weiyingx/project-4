@@ -22,8 +22,8 @@ $('.ui.form')
   $('.ui.checkbox')
   .checkbox()
 ;
-$('.order-button').click(function(){
-    $('.modaldiv').modal('show');
-});
+// $('.order-button').click(function(){
+//     $('.modaldiv').modal('show');
+// });
 
 })

@@ -40,6 +40,32 @@ app.post('/search', function(req, res) {
   });
 });
 
+
+app.get('/chooseResort', function(req, res) {
+    res.render('completebooking');
+  });
+
+  app.post('/finishbooking', function(req, res) {
+    db.resortpackage.findOne().then(function(resortpackage) {
+    resortpackage.createBooking({
+      fullName: req.body.fullname,
+      email: req.body.emailadd,
+      contact: req.body.contactno,
+      checkIn: req.body.checkin,
+      checkOut: req.body.checkout,
+      pax: req.body.pax,
+    }).then(function(booking) {
+      console.log(booking.get());
+    });
+  });
+    res.render('bookconfirmation');
+  });
+
+
+app.get('/bookconfirmation', function(req, res) {
+  res.render('bookconfirmation');
+});
+
 app.get('/planner', function(req, res) {
   res.render('planner');
 });
@@ -86,7 +112,7 @@ io.on('connection', function(socket){
   socket.broadcast.emit('count', viewer);
   console.log('a user connected ' + viewer);
   io.sockets.emit('count', viewer)
-  
+
   socket.on('disconnect', function(){
     viewer--;
     socket.broadcast.emit('count', viewer);

@@ -36,10 +36,12 @@
               <h5><strong>Room Type:</strong> <%= resort.roomType %></h5>
               <h5><strong>Package Type:</strong> <%= resort.packageType %></h5>
               <h5><strong>Price Per Person Per Night:</strong> SGD$ <%= resort.price %></h5>
-              <a class="order-button ui basic teal button">
-                <i class="calendar icon"></i>
-                Book Package
-              </a>
+              <form action="/chooseResort" method="GET">
+                <input type="hidden" name="resortpackageId" value="<%= resort.id %>">
+                <button class="order-button ui basic teal button" type="submit">
+                  Choose Package
+                </button>
+              </form>
             </div>
           </div>
 
@@ -51,47 +53,4 @@
     </div>
 
     <div class="resortList">
-    </div>
-
-
-
-    <div class="ui modal modaldiv">
-      <i class="close icon"></i>
-      <div class="header">
-        Booking Form
-      </div>
-      <div class="ui form">
-        <div class="fields">
-          <div class="six wide large field">
-            <label>Full name</label>
-            <input type="text" placeholder="Full Name">
-          </div>
-          <div class="four wide large field">
-            <label>Contact Number</label>
-            <input type="text" placeholder="Contact Number">
-          </div>
-          <div class="six wide large field">
-            <label>Email</label>
-            <input type="text" placeholder="Email">
-          </div>
-        </div>
-        <div class="fields">
-          <div class="six wide large field">
-            <label>Check In</label>
-            <input type="date">
-          </div>
-          <div class="six wide large field">
-            <label>Check Out</label>
-            <input type="date">
-          </div>
-          <div class="four wide large field">
-            <label>Pax</label>
-            <input type="number" placeholder="2">
-          </div>
-        </div>
-      </div>
-      <div class="actions">
-        <div class="ui button">Cancel</div>
-        <div class="ui button">OK</div>
-      </div>
     </div>
