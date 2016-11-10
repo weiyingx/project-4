@@ -6,6 +6,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
+var env = require('dotenv').config();
 
 app.set('view engine', 'ejs');
 
@@ -26,6 +27,7 @@ app.get('/livechat', function(req, res){
 app.get('/booking', function(req, res) {
   res.render('booking',{resortpackage:false});
 });
+
 
 app.post('/search', function(req, res) {
   db.resortpackage.findAll({
@@ -58,6 +60,8 @@ app.post('/chooseResort', function(req, res) {
     });
   });
 
+
+
   app.post('/finishbooking', function(req, res) {
     console.log(req.params);
     db.resortpackage.find({
@@ -79,14 +83,17 @@ app.post('/chooseResort', function(req, res) {
     res.render('bookconfirmation');
   });
 
-
 app.get('/bookconfirmation', function(req, res) {
   res.render('bookconfirmation');
 });
 
 
-app.get('/tripplanner', function(req, res){
-  res.sendFile(__dirname + '/views/tripplanner.html');
+// app.get('/tripplanner', function(req, res){
+//   res.sendFile(__dirname + '/views/tripplanner.html');
+// });
+
+app.get('/planner', function(req, res) {
+  res.render('planner');
 });
 
 app.get('/tioman', function(req, res) {
