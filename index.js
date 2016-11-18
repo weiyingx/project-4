@@ -76,6 +76,7 @@ app.post('/chooseResort', function(req, res) {
       checkIn: req.body.checkin,
       checkOut: req.body.checkout,
       pax: req.body.pax,
+      totalPrice: req.body.totalprice,
     }).then(function(booking) {
       console.log(booking.get());
     });
@@ -87,10 +88,6 @@ app.get('/bookconfirmation', function(req, res) {
   res.render('bookconfirmation');
 });
 
-
-// app.get('/tripplanner', function(req, res){
-//   res.sendFile(__dirname + '/views/tripplanner.html');
-// });
 
 app.get('/planner', function(req, res) {
   res.render('planner');
