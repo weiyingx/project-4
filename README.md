@@ -26,11 +26,16 @@ Stack and configurations used for this project:
 
 * Javascript
 
-* Node.JS
+* Node.js
 
 * Postgres Database
 
 * Google Maps API
+
+* Semantic UI
+
+* Sockets.io
+
 
 ####
 
